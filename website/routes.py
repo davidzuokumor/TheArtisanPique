@@ -1,17 +1,12 @@
+from flask import Flask, render_template, request, redirect, url_for, Blueprint
+
+routes = Blueprint('routes', __name__)
+
+@routes.route('/')
 def home():
-  return render_template('<h1>Home Page</h1>',title='Home Page')
+  return '<h1>Home Page</h1>'
 
+@routes.route('/about')
 def about():
-return render_template('<h1>About Page</h1>',title='About Page')
+  return "<h1>About Page</h1>"
 
-def register():
-return render_template('<h1>Register Page</h1>',title='Register Page')
-
-def login():
-return render_template('<h1>Login Page</h1>',title='Login Page')
-
-def logout():
-return render_template('<h1>Logout Page</h1>',title='Logout Page')
-
-def profile():
-return render_template('<h1>Profile Page</h1>',title='Profile Page')
