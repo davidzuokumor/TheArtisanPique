@@ -22,7 +22,14 @@ def logout():
 def sign_up():
     signupform = SignUpForm()
     if request.method == "POST":
-        # leave this empty till we can implement sign up logic
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        confirm_password = request.form.get('confirm-password')
+        role = request.form.get('role')
+
+        #implement validation login here and the password hashing too
+
         return redirect(url_for('auth.login'))
     else:
         return render_template("signup.html",signupform=signupform)

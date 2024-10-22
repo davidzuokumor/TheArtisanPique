@@ -1,0 +1,87 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f6f8fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: white;
+    padding: 32px;
+    border-radius: 6px;
+    width: 340px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e1e4e8;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #24292f;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+label {
+    font-size: 14px;
+    color: #24292f;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    background-color: #fafbfc;
+    box-sizing: border-box;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #0366d6;
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #2ea44f;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.btn:hover {
+    background-color: #22863a;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 12px;
+    color: #586069;
+}
+
+.footer-text a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
