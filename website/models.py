@@ -8,6 +8,7 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(50), nullable=False)
     age = db.Column(db.Integer, nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
+    role = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(120))
     date_created = db.Column(db.DateTime(timezone=True), default=func.now(), nullable=False)
     products = db.relationship('Product', backref='author', lazy=True)
