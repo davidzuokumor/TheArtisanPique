@@ -1,14 +1,20 @@
 from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+from enum import Enum
+
+
+class UserRole(Enum): # Apply migrations for changes in db Schema
+    CUSTOMER = 'customer'
+    ARTISAN = 'artisan'
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     age = db.Column(db.Integer, nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    role = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(120))
+    role = db.Column(db.Enum(UserRole),nullable=False)
     date_created = db.Column(db.DateTime(timezone=True), default=func.now(), nullable=False)
     products = db.relationship('Product', backref='author', lazy=True)
 
