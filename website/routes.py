@@ -4,7 +4,7 @@ routes = Blueprint('routes', __name__)
 
 @routes.route('/')
 def home():
-  return '<h1>Home Page</h1>'
+  return render_template("userregistration.html")
 
 @routes.route('/about')
 def about():

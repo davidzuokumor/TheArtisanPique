@@ -3,7 +3,7 @@ from flask_mail import Message
 from werkzeug.security import generate_password_hash
 from .forms import SignUpForm, LoginForm
 from .models import User
-from website import db, mail  
+from website import db, mail
 
 auth = Blueprint('auth', __name__)
 
