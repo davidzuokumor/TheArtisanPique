@@ -4,7 +4,7 @@ from sqlalchemy.sql import func
 from enum import Enum
 
 
-class UserRole(Enum): # Apply migrations for changes in db Schema
+class UserRole(Enum):
     CUSTOMER = 'customer'
     ARTISAN = 'artisan'
 

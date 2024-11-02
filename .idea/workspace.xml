@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2c23b6d-ee17-49c9-b830-c8cf44aa6e81" name="Changes" comment="...">
-      <change afterPath="$PROJECT_DIR$/website/templates/userregistration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/static/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/static/css/select_signup_role.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/signup_artisan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/signup_customer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/signup_delivery_personnel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/signup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/userregistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/select_signup_role.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +53,14 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/website/__init__.py" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/website/auth.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/website/auth.py" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/website/database_connections.py" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/website/forms.py" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/website/routes.py" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/website/templates/index.html" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/website/templates/login.html" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/website/templates/signup.html" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/website/templates/select_signup_role.html" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/website/templates/signup_customer.html" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -113,7 +124,8 @@
       <workItem from="1730067378651" duration="677000" />
       <workItem from="1730099434327" duration="5976000" />
       <workItem from="1730152562152" duration="374000" />
-      <workItem from="1730277044024" duration="1162000" />
+      <workItem from="1730277044024" duration="5067000" />
+      <workItem from="1730544695773" duration="3853000" />
     </task>
     <task id="LOCAL-00001" summary="The Artisan Pique">
       <option name="closed" value="true" />
@@ -170,7 +182,18 @@
     <MESSAGE value="..." />
     <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/website/auth.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/TheArtisanPique$main.coverage" NAME="main Coverage Results" MODIFIED="1730278017257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TheArtisanPique$main.coverage" NAME="main Coverage Results" MODIFIED="1730547603349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

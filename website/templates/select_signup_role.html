@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select_signup_role.css') }}">
+    <title>Login</title>
+</head>
+<body>
+<body>
+    <div class="container">
+        <div class="signup-box">
+            <a href="{{ url_for('auth.signup_customer') }}" class="signup-button">Signup as Customer</a>
+            <a href="{{ url_for('auth.signup_artisan') }}" class="signup-button">Signup as Artisan</a>
+            <a href="{{ url_for('auth.signup_delivery_personnel') }}" class="signup-button">Signup as Delivery Personnel</a>
+        </div>
+    </div>
+</body>
