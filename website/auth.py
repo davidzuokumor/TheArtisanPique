@@ -1,19 +1,24 @@
-from flask import Blueprint, render_template, url_for, redirect, request, flash
+from flask import Blueprint, request, jsonify, redirect, url_for, flash, send_from_directory
 from flask_mail import Message
 from werkzeug.security import generate_password_hash
-from .forms import LoginForm, SignUpCustomer
 from .models import User
 from website import db, mail
+from .forms import LoginForm, SignUpCustomer
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/login', methods=['GET', 'POST'])
+@auth.route('/')
+def index():
+    return send_from_directory('frontend/build', 'index.html')
+
+
+@auth.route('/login', methods=['POST'])
 def login():
     loginform = LoginForm()
-    if loginform.validate_on_submit(): 
+    if loginform.validate_on_submit():
         flash('Login successful!', 'success')
-        return redirect(url_for('routes.home'))
-    return render_template("login.html", loginform=loginform)
+        return jsonify({"message": "Login successful!"}), 200
+    return jsonify({"error": "Invalid credentials"}), 400
 
 @auth.route('/logout')
 def logout():
@@ -22,39 +27,41 @@ def logout():
 
 @auth.route('/select_signup_role')
 def select_signup_role():
-    return render_template("select_signup_role.html")
+    return {"message": "React will handle this route :) "}
 
-@auth.route('/signup_customer', methods=['GET', 'POST'])
+@auth.route('/signup_customer', methods=['POST'])
 def signup_customer():
-    signup_form = SignUpCustomer()
-    if signup_form.validate_on_submit():
-        user = User(
-               name=signup_form.name.data,
-               age=signup_form.age.data,
-               email=signup_form.email.data,
-               password=generate_password_hash(signup_form.password.data)
-        )
+    data = request.get_json()
 
-        msg = Message(
-            subject='Confirming Email Registration',
-                sender='artisan@email.com',
-                recipients=[user.email]
-            )
-        msg.body = 'Thank you for signing up for this account'
-        mail.send(msg)
+    name = data.get('name')
+    age = data.get('age')
+    email = data.get('email')
+    password = data.get('password')
+    confirm_password = data.get('confirmPassword')
 
-        db.session.add(user)
-        db.session.commit()
+    if password != confirm_password:
+        return jsonify({"error": "Passwords do not match"}), 400
 
-        flash('You have registered successfully!', 'success')
-        return redirect(url_for('auth.login'))
+    user = User(
+        name=name,
+        age=age,
+        email=email,
+        password=generate_password_hash(password)
+    )
 
-    return render_template("signup_customer.html", form=signup_form)
+    msg = Message(
+        subject='Confirming Email Registration',
+        sender='artisan@email.com',
+        recipients=[user.email]
+    )
+    msg.body = 'Thank you for signing up for this account'
+    mail.send(msg)
+
+    db.session.add(user)
+    db.session.commit()
+
+    return jsonify({"message": "You have registered successfully!"}), 201
 
 @auth.route('/signup_artisan')
 def signup_artisan():
-    return render_template("signup_artisan.html")
-
-@auth.route('/signup_delivery_personnel')
-def signup_delivery_personnel():
-    return render_template("signup_delivery_personnel.html")
+    return jsonify({"message": "You have registered as an artisan successfully!"})
